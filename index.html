@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>todo - Hasmo</title>
+    <title>todo - Arga</title>
 
     <!-- css External -->
     <link rel="stylesheet" href="css\style.css">
@@ -14,23 +14,40 @@
 
     <!-- header -->
     <header></header>
-    <h1>Arga's to do App</h1>
+    <h1 class="text-3xl font-bold ">Arga's Tasks App</h1>
 
     <!-- Main -->
     <main>
-        <!-- form to do  -->
-        <section>
-            <form id="todo-form">
-                <input type="text" id="todo-form-input" placeholder="enter your to do...." required>
-                <input type="date" id="todo-form-date" required>
-                <button type="submit">+</button>
+        <!-- task form  -->
+        <section class="mt-[16px]">
+            <form id="task-form">
+                <input type="text" class="border rounded-sm p-[4px]" id="task-form-input-name" placeholder="add task"  required>
+                <input type="date" class="border rounded-sm p-[4px]" id="task-form-input-date" required>
+                <button type="button" onclick="addTask()" class="border rounded-sm p-[4px]">+</button>
                 
             </form>
 
         </section>
 
-        <!-- list to do  -->
-        <section>
+        <!-- action button -->
+            <section class="mt-4 flex gap-2">
+                <button class="bg-green-500 text-white rounded-sm p-[4px]" onclick="showFilterFields()">Filter</button>
+                <button class="bg-red-500 text-white rounded-sm p-[4px]" onclick="deletAllTask()">Delete All</button>
+            </section>
+
+            <!-- Filter input fields, hidden by default -->
+            <section id="filter-fields" class="mt-2 flex gap-2" style="display:none;">
+                <input type="text" id="filter-name" class="border rounded-sm p-[4px]" placeholder="Filter by name">
+                <input type="date" id="filter-date" class="border rounded-sm p-[4px]" placeholder="Filter by date">
+                <button class="bg-green-500 text-white rounded-sm p-[4px]" onclick="filterTask()">Apply Filter</button>
+            </section>
+
+        <!-- list task  -->
+        <section class="mt-[16px]">
+            <ul id="task-list" class="mt-4">
+                <p class="text-center text-gray-500">no to do list yet, add one above</p>
+
+            </ul>
 
         </section>
 
